@@ -1,0 +1,11 @@
+import com.example.demo.entity.Cat
+
+rule "cat rule"
+when
+m: Cat(name == "foo")
+if (nickName == "bar") do [named_consequence]
+then
+System.out.println("Rule got triggered !");
+then [named_consequence]
+System.out.println("Named consequence got triggered !");
+end
